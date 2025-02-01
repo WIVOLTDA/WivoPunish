@@ -1,0 +1,14 @@
+name: Vexpunish
+version: 1.0
+main: com.seuplugin.PunishmentWebhook
+api-version: 1.16
+depend:
+  - LibertyBans
+commands:
+  punishmentwebhook:
+    description: Comandos do plugin de webhook
+    permission: punishmentwebhook.admin
+permissions:
+  punishmentwebhook.admin:
+    description: Permissão para configurar a webhook
+    default: op
