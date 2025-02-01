@@ -1,6 +1,6 @@
 package com.vexpunish
 
-import com.seuplugin.PunishmentWebhook;
+import com.vexpunish.PunishmentWebhook;
 import org.json.JSONObject;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;

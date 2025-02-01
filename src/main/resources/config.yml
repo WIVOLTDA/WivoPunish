@@ -1,6 +1,6 @@
 name: Vexpunish
 version: 1.0
-main: com.seuplugin.PunishmentWebhook
+main: com.vexpunish.PunishmentWebhook
 api-version: 1.16
 depend:
   - LibertyBans
