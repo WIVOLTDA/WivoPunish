@@ -1,4 +1,4 @@
-package com.vexpunish
+package com.vexpunish;
 
 import com.vexpunish.PunishmentWebhook;
 import org.json.JSONObject;

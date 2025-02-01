@@ -1,28 +1,28 @@
 package com.vexpunish;
 
-import com.vexpunish.listeners.punishListener;
+import com.vexpunish.listeners.PunishmentListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PunishmentWebhook extends JavaPlugin {
 
     private static PunishmentWebhook instance;
-    private string webhookUrl;
+    private String webhookUrl;
 
-    @override
-    public void  onEnable() {
+    @Override
+    public void onEnable() {
+        instance = this;  // Define a instância do plugin
         saveDefaultConfig();
-        webhookUrl - getConfig().getString("webhook_url");
+        webhookUrl = getConfig().getString("webhook_url");
 
-        getLogger().info("punishmentWebhook Ativado");
+        getLogger().info("PunishmentWebhook Ativado!");
         getServer().getPluginManager().registerEvents(new PunishmentListener(), this);
-
     }
 
     public static PunishmentWebhook getInstance() {
         return instance;
     }
 
-    public string getWebhookUrl() {
+    public String getWebhookUrl() {
         return webhookUrl;
     }
 }
