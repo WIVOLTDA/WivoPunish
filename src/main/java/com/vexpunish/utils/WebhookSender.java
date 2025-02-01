@@ -1,6 +1,5 @@
 package com.vexpunish;
 
-import com.vexpunish.PunishmentWebhook;
 import org.json.JSONObject;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -10,9 +9,9 @@ public class WebhookSender {
 
     public static void sendWebhook(String content) {
         try {
-            String webhookUrl = PunishmentWehook.getInstance().getWebhookUrl();
-            if (webhookUrl == null || webhookUrl.isEmpyt()) {
-                punishmentWebhook.getIntance().getLogger().warning("Webhook URL não configurada!");
+            String webhookUrl = PunishmentWebhook.getInstance().getWebhookUrl();
+            if (webhookUrl == null || webhookUrl.isEmpty()) {
+                PunishmentWebhook.getInstance().getLogger().warning("Webhook URL não configurada!");
                 return;
             }
 
@@ -24,16 +23,16 @@ public class WebhookSender {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setDoOutput(true);
-            try (OutputStream os -Connection.getOutputStream()){
+
+            try (OutputStream os = connection.getOutputStream()) {
                 os.write(json.toString().getBytes());
                 os.flush();
             }
 
-            connection.getResponseCode();
+            connection.getResponseCode(); // Executa a requisição HTTP
 
-        }catch (Exception e) {
-            punishmentWehook.getInstance().getLogger().severe("erro ao enviar webhook: " + e.getMessage());
-
+        } catch (Exception e) {
+            PunishmentWebhook.getInstance().getLogger().severe("Erro ao enviar webhook: " + e.getMessage());
         }
     }
 }
