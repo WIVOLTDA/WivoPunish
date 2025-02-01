@@ -12,16 +12,52 @@
         <!-- LibertyBans API -->
         <dependency>
             <groupId>space.arim.libertybans</groupId>
-            <artifactId>libertybans-api</artifactId>
-            <version>latest</version>
+            <artifactId>bans-api</artifactId>
+            <version>1.1.0</version>
             <scope>provided</scope>
         </dependency>
 
-        <!-- Adventure API (opcional) -->
+        <!-- Spigot API -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.20.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Adventure API (opcional, para formatação de mensagens) -->
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-api</artifactId>
             <version>4.14.0</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <!-- Repositório do LibertyBans -->
+        <repository>
+            <id>arim-mvn-agpl3</id>
+            <url>https://mvn-repo.arim.space/affero-gpl3/</url>
+        </repository>
+
+        <!-- Repositório do SpigotMC -->
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>17</source>  <!-- Java 17+ é necessário para Minecraft 1.20+ -->
+                    <target>17</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

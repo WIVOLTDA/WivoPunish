@@ -1,4 +1,4 @@
-package com.vexpunish
+package com.vexpunish;
 
 import com.vexpunish.listeners.punishListener;
 import org.bukkit.plugin.java.JavaPlugin;

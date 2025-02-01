@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/VexPunish.iml" filepath="$PROJECT_DIR$/.idea/VexPunish.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vexpunish.iml" filepath="$PROJECT_DIR$/vexpunish.iml" />
     </modules>
   </component>
 </project>
